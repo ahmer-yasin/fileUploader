@@ -1,10 +1,11 @@
 {
   "name": "file_uploader",
   "version": "0.0.1",
-  "script": {
+  "scripts": {
     "start": "node Server.js",
     "test": "node test.js",
-    "lint": "eslint --project --skip node_modules"
+    "lint": "eslint *.js --debug",
+    "lint-fix": "eslint *.js --fix"
   },
   "dependencies": {
     "express": "~4.10.2",
