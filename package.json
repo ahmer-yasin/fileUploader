@@ -1,8 +1,17 @@
 {
-  "name": "File_uploader",
+  "name": "file_uploader",
   "version": "0.0.1",
+  "scripts": {
+    "start": "node Server.js",
+    "test": "node test.js",
+    "lint": "eslint *.js --debug",
+    "lint-fix": "eslint *.js --fix"
+  },
   "dependencies": {
     "express": "~4.10.2",
     "multer": "~0.1.6"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1"
   }
 }
