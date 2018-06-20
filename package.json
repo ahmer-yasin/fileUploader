@@ -1,6 +1,9 @@
 {
-  "name": "File_uploader",
+  "name": "file_uploader",
   "version": "0.0.1",
+  "script": {
+    "start": "node Server.js"
+  },
   "dependencies": {
     "express": "~4.10.2",
     "multer": "~0.1.6"
