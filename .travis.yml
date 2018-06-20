@@ -1,7 +1,36 @@
 language: node_js
 node_js:
- - "stable"
-script: npm test
-env:
-  - NODE_ENV="development"
-  - NODE_ENV="production"
+  - "0.10"
+  - "0.12"
+  - "1.8"
+  - "2.5"
+  - "3.3"
+  - "4.8"
+  - "5.12"
+  - "6.12"
+  - "7.10"
+  - "8.9"
+matrix:
+  include:
+    - node_js: "9"
+      env: "NVM_NODEJS_ORG_MIRROR=https://nodejs.org/download/nightly"
+    - node_js: "10"
+      env: "NVM_NODEJS_ORG_MIRROR=https://nodejs.org/download/nightly"
+  allow_failures:
+    # Allow the nightly installs to fail
+    - env: "NVM_NODEJS_ORG_MIRROR=https://nodejs.org/download/nightly"
+sudo: false
+cache:
+  directories:
+    - node_modules
+before_install:
+  - "npm install eslint --save-dev"
+  # Skip updating shrinkwrap / lock
+  - "npm config set shrinkwrap false"
+
+  # Update Node.js modules
+  - "test ! -d node_modules || npm prune"
+  - "test ! -d node_modules || npm rebuild"
+script:
+  - "npm run test"
+  - "npm run lint"

@@ -3,10 +3,14 @@
   "version": "0.0.1",
   "script": {
     "start": "node Server.js",
-    "test": "node test.js"
+    "test": "node test.js",
+    "lint": "eslint --project --skip node_modules"
   },
   "dependencies": {
     "express": "~4.10.2",
     "multer": "~0.1.6"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1"
   }
 }
