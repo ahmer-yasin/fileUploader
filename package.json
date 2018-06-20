@@ -2,7 +2,8 @@
   "name": "file_uploader",
   "version": "0.0.1",
   "script": {
-    "start": "node Server.js"
+    "start": "node Server.js",
+    "test": "node test.js"
   },
   "dependencies": {
     "express": "~4.10.2",

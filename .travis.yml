@@ -1,7 +1,7 @@
 language: node_js
 node_js:
  - "stable"
-script: node test.js
+script: npm test
 env:
   - NODE_ENV="development"
   - NODE_ENV="production"
